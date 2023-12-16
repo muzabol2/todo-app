@@ -15,7 +15,7 @@ const ColorModeSwitcher = (props: Props) => {
 
   return (
     <button
-      className="text-xl text-current ml-2"
+      className="text-lg text-current ml-2"
       onClick={toggleColorMode}
       aria-label={`Switch to ${text} mode`}
       {...props}

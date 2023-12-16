@@ -7,7 +7,7 @@ const TodoList = () => {
 
   return (
     <>
-      <h1 className="text-2xl font-bold mb-4">Todo List</h1>
+      <h1 className="text-2xl font-bold">Todo List</h1>
       {todos.map((todo) => (
         <TodoItem
           key={todo.id}

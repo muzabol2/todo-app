@@ -4,18 +4,19 @@ const TodoAdd = () => {
   const { newTodo, setNewTodo, addTodo } = useStore();
 
   return (
-    <div className="grid gap-4 pt-2 grid-cols-6">
+    <div className="grid grid-cols-8 gap-2 pt-2 w-full">
+      <div className="col-span-1"></div>
       <input
-        className="col-span-5 placeholder-gray-500"
+        className="col-span-5 p-2 border border-gray-300 rounded-md"
         placeholder="New todo"
         value={newTodo}
         onChange={(e) => setNewTodo(e.target.value)}
       />
       <button
-        className="col-span-1 bg-blue-500 text-white"
+        className="col-span-2 bg-blue-500 text-white p-2 rounded-md"
         onClick={() => addTodo()}
       >
-        Add Todo
+        Add
       </button>
     </div>
   );
