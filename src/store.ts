@@ -5,16 +5,10 @@ export interface Todo {
 }
 
 export const updateTodo = (todos: Todo[], id: number, text: string): Todo[] =>
-  todos.map((todo) => ({
-    ...todo,
-    text: todo.id === id ? text : todo.text,
-  }));
+  todos.map((todo) => (todo.id === id ? { ...todo, text } : todo));
 
 export const toggleTodo = (todos: Todo[], id: number): Todo[] =>
-  todos.map((todo) => ({
-    ...todo,
-    done: todo.id === id ? !todo.done : todo.done,
-  }));
+  todos.map((todo) => (todo.id === id ? { ...todo, done: !todo.done } : todo));
 
 export const removeTodo = (todos: Todo[], id: number): Todo[] =>
   todos.filter((todo) => todo.id !== id);
