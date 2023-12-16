@@ -1,8 +1,6 @@
-export interface Todo {
-  id: number;
-  text: string;
-  done: boolean;
-}
+import { create } from "zustand";
+
+import { Todo } from "types";
 
 export const updateTodo = (todos: Todo[], id: number, text: string): Todo[] =>
   todos.map((todo) => (todo.id === id ? { ...todo, text } : todo));
@@ -21,3 +19,30 @@ export const addTodo = (todos: Todo[], text: string): Todo[] => [
     done: false,
   },
 ];
+
+type Store = {
+  todos: Todo[];
+  newTodo: string;
+  addTodo: () => void;
+  setNewTodo: (text: string) => void;
+  update: (id: number, text: string) => void;
+  toggle: (id: number) => void;
+  remove: (id: number) => void;
+};
+
+const useStore = create<Store>((set) => ({
+  todos: [],
+  newTodo: "",
+  addTodo: () =>
+    set((state) => ({
+      todos: addTodo(state.todos, state.newTodo),
+      newTodo: "",
+    })),
+  setNewTodo: (text) => set({ newTodo: text }),
+  update: (id, text) =>
+    set((state) => ({ todos: updateTodo(state.todos, id, text) })),
+  toggle: (id) => set((state) => ({ todos: toggleTodo(state.todos, id) })),
+  remove: (id) => set((state) => ({ todos: removeTodo(state.todos, id) })),
+}));
+
+export default useStore;
