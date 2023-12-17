@@ -15,7 +15,11 @@ const LanguageSwitcher = () => {
   );
 
   return (
-    <select value={lang} onChange={handleChange}>
+    <select
+      value={lang}
+      onChange={handleChange}
+      className="p-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-800 dark:text-white"
+    >
       {Object.keys(dictionary.dropdown).map((langKey) => (
         <option key={langKey} value={langKey}>
           {dictionary.dropdown[langKey as LanguageKey]}

@@ -13,18 +13,18 @@ const TodoItem = ({ todo, deleteButton, toggle, remove, update }: Props) => (
     <div className="col-span-1 flex items-center justify-center">
       <input
         type="checkbox"
-        className="form-checkbox h-5 w-5 text-blue-600"
+        className="form-checkbox h-5 w-5 text-blue-600 dark:text-blue-400"
         checked={todo.done}
         onChange={() => toggle(todo.id)}
       />
     </div>
     <input
-      className="col-span-5 p-2 border border-gray-300 rounded-md"
+      className="col-span-5 p-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-800 dark:text-white"
       value={todo.text}
       onChange={(e) => update(todo.id, e.target.value)}
     />
     <button
-      className="col-span-2 bg-red-500 text-white p-2 rounded-md"
+      className="col-span-2 bg-red-500 dark:bg-red-400 text-white p-2 rounded-md"
       onClick={() => remove(todo.id)}
     >
       {deleteButton}

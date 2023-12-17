@@ -8,7 +8,9 @@ const TodoList = () => {
 
   return (
     <>
-      <h1 className="text-2xl font-bold">{D.TODO_LIST}</h1>
+      <h1 className="text-2xl font-bold text-black dark:text-white">
+        {D.TODO_LIST}
+      </h1>
       {todos.map((todo) => (
         <TodoItem
           key={todo.id}
