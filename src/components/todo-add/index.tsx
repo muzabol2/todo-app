@@ -1,14 +1,15 @@
-import useStore from "store";
+import { useLanguageStore, useTodoStore } from "store";
 
 const TodoAdd = () => {
-  const { newTodo, setNewTodo, addTodo } = useStore();
+  const { newTodo, setNewTodo, addTodo } = useTodoStore();
+  const { dictionary: D } = useLanguageStore();
 
   return (
     <div className="grid grid-cols-8 gap-2 pt-2 w-full">
       <div className="col-span-1"></div>
       <input
         className="col-span-5 p-2 border border-gray-300 rounded-md"
-        placeholder="New todo"
+        placeholder={D.NEW_TODO}
         value={newTodo}
         onChange={(e) => setNewTodo(e.target.value)}
       />
@@ -16,7 +17,7 @@ const TodoAdd = () => {
         className="col-span-2 bg-blue-500 text-white p-2 rounded-md"
         onClick={() => addTodo()}
       >
-        Add
+        {D.ADD_TODO}
       </button>
     </div>
   );

@@ -2,12 +2,13 @@ import { Todo } from "types";
 
 type Props = {
   todo: Todo;
+  deleteButton: string;
   toggle: (id: number) => void;
   remove: (id: number) => void;
   update: (id: number, text: string) => void;
 };
 
-const TodoItem = ({ todo, toggle, remove, update }: Props) => (
+const TodoItem = ({ todo, deleteButton, toggle, remove, update }: Props) => (
   <div className="grid grid-cols-8 gap-2 pt-2 w-full">
     <div className="col-span-1 flex items-center justify-center">
       <input
@@ -26,7 +27,7 @@ const TodoItem = ({ todo, toggle, remove, update }: Props) => (
       className="col-span-2 bg-red-500 text-white p-2 rounded-md"
       onClick={() => remove(todo.id)}
     >
-      Delete
+      {deleteButton}
     </button>
   </div>
 );

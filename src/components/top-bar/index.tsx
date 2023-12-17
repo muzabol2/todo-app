@@ -1,9 +1,11 @@
-import useStore from "store";
+import { useLanguageStore, useTodoStore } from "store";
 
 import ColorModeSwitcher from "./color-mode-switcher";
+import LanguageSwitcher from "./language-switcher";
 
 const TopBar = () => {
-  const store = useStore();
+  const store = useTodoStore();
+  const { dictionary: D } = useLanguageStore();
 
   const onLoad = () => {
     fetch(
@@ -16,11 +18,12 @@ const TopBar = () => {
   return (
     <div className="grid grid-cols-2 gap-3 pt-2">
       <ColorModeSwitcher />
+      <LanguageSwitcher />
       <button
         className="bg-blue-500 text-white p-2 rounded-md"
         onClick={onLoad}
       >
-        Load
+        {D.LOAD}
       </button>
     </div>
   );
