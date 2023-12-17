@@ -11,7 +11,7 @@ const LanguageSwitcher = () => {
     (e: React.ChangeEvent<HTMLSelectElement>) => {
       setLanguage(e.target.value as LanguageKey);
     },
-    [setLanguage]
+    [setLanguage],
   );
 
   return (

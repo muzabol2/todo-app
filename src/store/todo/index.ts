@@ -4,7 +4,6 @@ import { addTodo, removeTodo, toggleTodo, updateTodo } from "./actions";
 
 import { Todo } from "types";
 
-
 export type Store = {
   todos: Todo[];
   newTodo: string;
@@ -15,7 +14,6 @@ export type Store = {
   remove: (id: number) => void;
   load: (todos: Todo[]) => void;
 };
-
 
 const useTodoStore = create<Store>((set) => ({
   todos: [],

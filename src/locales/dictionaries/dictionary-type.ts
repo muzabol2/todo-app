@@ -1,8 +1,8 @@
 export type Dictionary = {
   dropdown: {
-    EN: string,
-    PL: string,
-  },
+    EN: string;
+    PL: string;
+  };
   ADD_TODO: string;
   DELETE: string;
   LOAD: string;

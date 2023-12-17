@@ -9,7 +9,7 @@ const TopBar = () => {
 
   const onLoad = () => {
     fetch(
-      "https://raw.githubusercontent.com/jherr/todos-four-ways/master/data/todos.json"
+      "https://raw.githubusercontent.com/jherr/todos-four-ways/master/data/todos.json",
     )
       .then((res) => res.json())
       .then((data) => store.load(data));

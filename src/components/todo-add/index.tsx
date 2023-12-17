@@ -6,7 +6,7 @@ const TodoAdd = () => {
 
   return (
     <div className="grid grid-cols-8 gap-2 pt-2 w-full">
-      <div className="col-span-1"></div>
+      <div className="col-span-1" />
       <input
         className="col-span-5 p-2 border border-gray-300 rounded-md"
         placeholder={D.NEW_TODO}
