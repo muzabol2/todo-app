@@ -2,7 +2,7 @@ import React from "react";
 
 import { useLanguageStore } from "store";
 
-import { LanguageKey } from "models";
+import { LanguageKey } from "locales";
 
 const LanguageSwitcher = () => {
   const { lang, setLanguage, dictionary } = useLanguageStore();

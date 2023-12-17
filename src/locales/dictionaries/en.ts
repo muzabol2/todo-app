@@ -1,4 +1,4 @@
-import { Dictionary } from "types";
+import { Dictionary } from "./dictionary-type";
 
 export const EN: Dictionary = {
   dropdown: {
