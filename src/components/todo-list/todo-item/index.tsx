@@ -19,9 +19,12 @@ const TodoItem = ({ todo, deleteButton, toggle, remove, update }: Props) => (
       />
     </div>
     <input
-      className="col-span-5 p-2 border border-gray-300 dark:border-gray-600 rounded-md dark:bg-gray-800 dark:text-white"
+      className={`col-span-5 p-2 border border-gray-300 dark:border-gray-600 rounded-md ${
+        todo.done ? "bg-gray-200 dark:bg-gray-700" : "dark:bg-gray-800"
+      } dark:text-white`}
       value={todo.text}
       onChange={(e) => update(todo.id, e.target.value)}
+      disabled={todo.done}
     />
     <button
       className="col-span-2 bg-red-500 dark:bg-red-400 text-white rounded-md w-20"
