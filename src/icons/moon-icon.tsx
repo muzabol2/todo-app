@@ -7,7 +7,7 @@ const MoonIcon = () => (
       strokeLinecap="round"
       strokeMiterlimit="10"
       strokeWidth="30"
-    />{" "}
+    />
   </svg>
 );
 

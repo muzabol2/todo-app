@@ -10,7 +10,7 @@ type Props = {
 
 const TodoItem = ({ todo, deleteButton, toggle, remove, update }: Props) => (
   <div className="grid grid-cols-8 gap-2 pt-2 w-full">
-    <div className="col-span-1 flex items-center justify-center">
+    <div className="col-span-1 flex items-center justify-end">
       <input
         type="checkbox"
         className="form-checkbox h-5 w-5 text-blue-600 dark:text-blue-400"
@@ -24,7 +24,7 @@ const TodoItem = ({ todo, deleteButton, toggle, remove, update }: Props) => (
       onChange={(e) => update(todo.id, e.target.value)}
     />
     <button
-      className="col-span-2 bg-red-500 dark:bg-red-400 text-white p-2 rounded-md"
+      className="col-span-2 bg-red-500 dark:bg-red-400 text-white rounded-md w-20"
       onClick={() => remove(todo.id)}
     >
       {deleteButton}
