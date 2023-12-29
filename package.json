@@ -1,13 +1,11 @@
 {
   "name": "todo-app",
-  "homepage": "https://muzabol2.github.io/todo-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build --base=/todo-app/",
-    "deploy": "gh-pages -d dist",
     "lint": "eslint './src/**/*.{js,ts,tsx}' --quiet --fix",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "preview": "vite preview"
@@ -29,7 +27,6 @@
     "eslint-plugin-autofix": "^1.1.0",
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-react": "^7.33.2",
-    "gh-pages": "^6.1.0",
     "postcss": "^8.4.32",
     "prettier": "^3.1.1",
     "tailwindcss": "^3.3.6",
